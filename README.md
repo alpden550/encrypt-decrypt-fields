@@ -1,9 +1,14 @@
 # Django Encrypt Decrypt
  
-A Django model field that encrypts your data based SHA256 algorithm when saving to the model field. It keeps data always encrypted in the database.
+A Django model field that encrypts your data based SHA256 algorithm and Fernet (symmetric encryption) when saving to the model field.  The fernet module guarantees that data encrypted using it cannot be further manipulated or read without the key.  It keeps data always encrypted in the database.
+
+## How install
+
+```
+pip install django-encrypt-decrypt
+```
 
 ## Usage
-
 
 Use project secret key or own:
 
