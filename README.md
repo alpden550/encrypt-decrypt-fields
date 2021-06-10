@@ -14,7 +14,7 @@ from django_encrypt_decrypt import EncryptedTextField
 
 
 class DemoModel(models.Models):
-    password = EncryptedTextField(blank=True, key=settings.SECRET_KEY)
+    password = EncryptedTextField(blank=True)
 ```
 
 ```
