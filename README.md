@@ -1,6 +1,6 @@
 # Django Encrypt Decrypt
  
-A Django model field that encrypt your data based SHA256 algorithm on  when save to model field. It keeps data always encrypted in database.
+A Django model field that encrypts your data based SHA256 algorithm when saving to the model field. It keeps data always encrypted in the database.
 
 ## Usage
 
