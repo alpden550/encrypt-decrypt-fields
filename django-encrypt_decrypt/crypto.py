@@ -5,7 +5,7 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
 
 
-class Crypt:
+class Crypto:
     def __init__(self, key: str):
         self.key = key
 
@@ -14,7 +14,7 @@ class Crypt:
         digest.update(self.key.encode())
         return base64.urlsafe_b64encode(digest.finalize())
 
-    def encrypt_password(self, password: str) -> str:
+    def encrypt(self, password: str) -> str:
         fernet = Fernet(self.get_key())
         return fernet.encrypt(password.encode()).decode()
 
