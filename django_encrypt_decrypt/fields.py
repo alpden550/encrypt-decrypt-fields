@@ -20,7 +20,7 @@ class EncryptedTextField(models.TextField):
 
     def get_db_prep_value(self, value, connection, prepared=False):
         value = super().get_db_prep_value(value, connection, prepared)
-        if value is None:
+        if not value:
             return None
 
         encrypted_text = self.crypto.encrypt(value)
