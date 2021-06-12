@@ -1,4 +1,5 @@
 import base64
+from typing import Optional
 
 from cryptography.fernet import Fernet
 from cryptography.hazmat.backends import default_backend
@@ -18,6 +19,9 @@ class Crypto:
         fernet = Fernet(self.get_key())
         return fernet.encrypt(password.encode()).decode()
 
-    def decrypt_token(self, token: str) -> str:
+    def decrypt_token(self, token: Optional[str]) -> Optional[str]:
+        if token is None:
+            return
+
         fernet = Fernet(self.get_key())
         return fernet.decrypt(token.encode()).decode()
