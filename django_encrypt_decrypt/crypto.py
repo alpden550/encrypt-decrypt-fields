@@ -20,7 +20,7 @@ class Crypto:
         return fernet.encrypt(password.encode()).decode()
 
     def decrypt_token(self, token: Optional[str]) -> Optional[str]:
-        if token is None:
+        if not token:
             return
 
         fernet = Fernet(self.get_key())
