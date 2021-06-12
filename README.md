@@ -28,7 +28,7 @@ DemoModel.objects.create(password='password')
 
 ```
 obj = DemoModel.objects.get(id=1)
-obj.password  # 'bYijegsEDrmS1s7iuytt5TUgglnspA'
+obj.password  # 'gAAAAABgxGVVeTPV9i1nPNl91Ss4XVH0rD6eJCgOWIOeRwtagp12gBJg9DL_HXODTDW0WKsqc8Z9vsuHUiAr3qQVE9YQmTd3pg=='
 ```
 
 To decrypt value use Crypto class:
