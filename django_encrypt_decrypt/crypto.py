@@ -21,7 +21,7 @@ class Crypto:
 
     def decrypt_token(self, token: Optional[str]) -> Optional[str]:
         if not token:
-            return
+            return None
 
         fernet = Fernet(self.get_key())
         return fernet.decrypt(token.encode()).decode()
