@@ -2,6 +2,8 @@
  
 A Django model field that encrypts your data based SHA256 algorithm and Fernet (symmetric encryption) when saving to the model field.  The fernet module guarantees that data encrypted using it cannot be further manipulated or read without the key.  It keeps data always encrypted in the database.
 
+[![Project Check](https://github.com/alpden550/django-encrypt-decrypt/actions/workflows/python-package.yml/badge.svg)](https://github.com/alpden550/django-encrypt-decrypt/actions/workflows/python-package.yml)
+
 ## How install
 
 ```
