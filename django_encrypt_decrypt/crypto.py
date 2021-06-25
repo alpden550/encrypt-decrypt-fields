@@ -15,13 +15,13 @@ class Crypto:
         digest.update(self.key.encode())
         return base64.urlsafe_b64encode(digest.finalize())
 
-    def encrypt(self, password: str) -> str:
+    def encrypt(self, password: str) -> bytes:
         fernet = Fernet(self.get_key())
-        return fernet.encrypt(password.encode()).decode()
+        return fernet.encrypt(password.encode())
 
-    def decrypt_token(self, token: Optional[str]) -> Optional[str]:
+    def decrypt_token(self, token: Optional[bytes]) -> Optional[str]:
         if not token:
             return None
 
         fernet = Fernet(self.get_key())
-        return fernet.decrypt(token.encode()).decode()
+        return fernet.decrypt(token).decode()
