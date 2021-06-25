@@ -20,7 +20,7 @@ class TestCrypt:
     def test_encrypt_successfully(self):
         password = Crypto('secret').encrypt('password')
 
-        assert isinstance(password, str)
+        assert isinstance(password, bytes)
         assert password != 'password'
 
     @pytest.mark.parametrize("test_input", [int, tuple, list, dict])
