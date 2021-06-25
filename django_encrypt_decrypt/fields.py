@@ -15,7 +15,7 @@ class EncryptedTextField(models.BinaryField):
         super().__init__(*args, **kwargs)
 
     def get_db_prep_value(self, value, connection, prepared=False):
-        if not value or isinstance(value, bytes):
+        if not value or isinstance(value, bytes) or isinstance(value, memoryview):
             return value
 
         encrypted_text = self.crypto.encrypt(value)
