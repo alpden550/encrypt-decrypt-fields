@@ -1,6 +1,6 @@
 from sqlalchemy.types import TypeDecorator, Text
 
-from encrypt_decrypt_field import Crypto
+from encrypt_decrypt_fields import Crypto
 
 
 class EncryptedAlchemyTextField(TypeDecorator):

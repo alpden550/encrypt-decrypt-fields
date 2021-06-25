@@ -1,6 +1,6 @@
 import pytest
 
-from encrypt_decrypt_field import Crypto
+from encrypt_decrypt_fields import Crypto
 
 
 class TestCrypt:
