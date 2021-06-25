@@ -74,7 +74,7 @@ class Demo(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    password = Column(EncryptedAlchemyTextField(key='secret1))
+    password = Column(EncryptedAlchemyTextField(key='secret))
 ```
 
 ```angular2html
