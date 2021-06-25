@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "encrypt-decrypt-fields"
+version = "1.1.0"
+description = "Encrypt and decrypt for django model field."
+authors = ["Denis Novikov <alpden550@gmail.com>"]
+readme = "README.md"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 3.2",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development",
+]
+license = "MIT License"
+homepage = 'https://github.com/alpden550/django-encrypt-decrypt'
+repository = 'https://github.com/alpden550/django-encrypt-decrypt'
+keywords = ["django", "django-orm", "cryptography", "development"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2.4"
+cryptography = "^3.4.7"
+SQLAlchemy = "^1.4.19"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+mypy = "^0.910"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
