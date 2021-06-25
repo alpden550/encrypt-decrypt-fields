@@ -1,6 +1,6 @@
 import pytest
 
-from django_encrypt_decrypt import Crypto
+from encrypt_decrypt_field import Crypto
 
 
 class TestCrypt:
