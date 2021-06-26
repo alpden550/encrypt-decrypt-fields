@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "encrypt-decrypt-fields"
-version = "1.1.0"
+version = "1.1.1"
 description = "Encrypt and decrypt for django model field."
 authors = ["Denis Novikov <alpden550@gmail.com>"]
 readme = "README.md"
