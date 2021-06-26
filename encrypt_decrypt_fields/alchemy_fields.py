@@ -1,10 +1,10 @@
-from sqlalchemy.types import TypeDecorator, Text
+from sqlalchemy.types import TypeDecorator, BINARY
 
 from encrypt_decrypt_fields import Crypto
 
 
-class EncryptedAlchemyTextField(TypeDecorator):
-    impl = Text
+class EncryptedAlchemyBinaryField(TypeDecorator):
+    impl = BINARY
 
     def __init__(self, key: str, *arg, **kwargs):
         TypeDecorator.__init__(self, *arg, **kwargs)
