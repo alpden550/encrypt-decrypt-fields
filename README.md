@@ -19,11 +19,11 @@ For Django use project secret key or own:
 ```
 from django.conf import settings
 from django.db import Model
-from django_encrypt_decrypt import EncryptedTextField
+from django_encrypt_decrypt import EncryptedBinaryField
 
 
 class DemoModel(models.Models):
-    password = EncryptedTextField(blank=True)
+    password = EncryptedBinaryField(blank=True, null=True)
 ```
 
 ```
@@ -37,14 +37,14 @@ obj.password.to_bytes()  # b'gAAAAABgxGVVeTPV9i1nPNl91Ss4XVH0rD6eJCgOWIOeRwtagp1
 
 To read bytes in postgres, use to_bytes() method of memoryview
 
-```angular2html
+```
 obj.password.to_bytes()
 ```
 
 or
 
-```angular2html
-bytes(obj.password)
+```
+bytes(obj.password, 'utf-8')
 ```
 
 To decrypt value use Crypto class:
@@ -74,10 +74,10 @@ class Demo(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    password = Column(EncryptedAlchemyTextField(key='secret))
+    password = Column(EncryptedAlchemyBinaryField(key='secret), nullable=True)
 ```
 
-```angular2html
+```
 object = session.query(Demo).first()
 Crypto('secret').decrypt_token(object.password)  
 ```
