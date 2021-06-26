@@ -12,7 +12,7 @@ class EncryptedAlchemyBinaryField(TypeDecorator):
         self.crypto = Crypto(key=self.key)
 
     def process_bind_param(self, value, dialect):
-        if not value or isinstance(value, bytes) or isinstance(value, memoryview):
+        if not value or isinstance(value, (bytes, memoryview)):
             return value
 
-        return self.crypto.encrypt(value)
+        return self.crypto.encrypt(str(value))
