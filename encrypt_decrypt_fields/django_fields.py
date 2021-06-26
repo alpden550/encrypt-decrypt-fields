@@ -4,7 +4,8 @@ from django.db import models
 from .crypto import Crypto
 
 
-class EncryptedTextField(models.BinaryField):
+class EncryptedBinaryField(models.BinaryField):
+    """Store encrypted value as binary"""
 
     def __init__(self, *args, **kwargs):
         self.key = kwargs.pop('key', None)
@@ -15,7 +16,7 @@ class EncryptedTextField(models.BinaryField):
         super().__init__(*args, **kwargs)
 
     def get_db_prep_value(self, value, connection, prepared=False):
-        if not value or isinstance(value, bytes) or isinstance(value, memoryview):
+        if not value or isinstance(value, memoryview):
             return value
 
         encrypted_text = self.crypto.encrypt(value)
