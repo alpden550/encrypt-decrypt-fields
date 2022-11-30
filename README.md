@@ -4,6 +4,8 @@ A Django and SQLAlchemy model field that encrypts your data based SHA256 algorit
 
 Also, possible to use it directly with the Crypto class.
 
+[![ProjectCheck](https://github.com/alpden550/encrypt-decrypt-fields/actions/workflows/check.yml/badge.svg)](https://github.com/alpden550/encrypt-decrypt-fields/actions/workflows/check.yml)
+
 ## How install
 
 ```
