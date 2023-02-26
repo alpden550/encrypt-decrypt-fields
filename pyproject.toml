@@ -23,7 +23,7 @@ keywords = ["django", "django-orm", "cryptography", "development", "orm", "sqlac
 [tool.poetry.dependencies]
 python = "^3.10"
 SQLAlchemy = "^1.4.19"
-cryptography = "^37.0"
+cryptography = ">=37,<40"
 Django = "*"
 
 [tool.poetry.dev-dependencies]
