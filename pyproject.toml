@@ -1,12 +1,13 @@
 [tool.poetry]
 name = "encrypt-decrypt-fields"
-version = "1.1.5"
+version = "1.2.5"
 description = "Encrypt and decrypt for django model field."
 authors = ["Denis Novikov <alpden550@gmail.com>"]
 readme = "README.md"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
-    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: Implementation",
     "Environment :: Web Environment",
     "Framework :: Django",
@@ -23,12 +24,12 @@ keywords = ["django", "django-orm", "cryptography", "development", "orm", "sqlac
 [tool.poetry.dependencies]
 python = "^3.10"
 SQLAlchemy = "^1.4.19"
-cryptography = ">=37,<40"
+cryptography = ">37.0"
 Django = "*"
 
-[tool.poetry.dev-dependencies]
-mypy = "^0.910"
-pytest = "^7.2.0"
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.1.1"
+pytest = "^7.2.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
