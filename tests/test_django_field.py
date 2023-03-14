@@ -10,8 +10,7 @@ class TestDjangoEncryptField:
 
     @pytest.fixture
     def connection(self):
-        connection = Mock()
-        yield connection
+        yield Mock()
 
     def test_passed_empty_value(self, connection):
         value = self.FIELD.get_db_prep_value(None, connection)
