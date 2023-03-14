@@ -20,5 +20,4 @@ class EncryptedBinaryField(models.BinaryField):
             return value
 
         encrypted_text = self.crypto.encrypt(str(value))
-        encrypted_value = super().get_db_prep_value(encrypted_text, connection, prepared)
-        return encrypted_value
+        return super().get_db_prep_value(encrypted_text, connection, prepared)
