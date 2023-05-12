@@ -29,7 +29,7 @@ class TestCrypt:
             Crypto('secret').encrypt(test_input)
 
     def test_decrypt_empty_value(self):
-        password = Crypto('secret').decrypt_token('')
+        password = Crypto('secret').decrypt_token(b'')
 
         assert not password
 
