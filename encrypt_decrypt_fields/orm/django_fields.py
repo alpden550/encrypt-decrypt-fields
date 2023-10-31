@@ -1,14 +1,14 @@
 from django.conf import settings
 from django.db import models
 
-from .crypto import Crypto
+from encrypt_decrypt_fields.services import Crypto
 
 
 class EncryptedBinaryField(models.BinaryField):
     """Store encrypted value as binary"""
 
     def __init__(self, *args, **kwargs):
-        self.key = kwargs.pop('key', None)
+        self.key = kwargs.pop("key", None)
         if self.key is None:
             self.key = settings.SECRET_KEY
 
