@@ -6,7 +6,7 @@ or read without the key. It keeps data always encrypted in the database.
 
 Also, possible to use it directly with the Crypto class.
 
-[![ProjectCheck](https://github.com/alpden550/encrypt-decrypt-fields/actions/workflows/check.yml/badge.svg)](https://github.com/alpden550/encrypt-decrypt-fields/actions/workflows/check.yml)
+[![Check](https://github.com/alpden550/encrypt-decrypt-fields/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/alpden550/encrypt-decrypt-fields/actions/workflows/python-app.yml)
 
 ## How install
 
