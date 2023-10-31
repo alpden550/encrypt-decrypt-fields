@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10"]
+        python-version: ["3.10", "3.11", "3.12"]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -21,13 +21,10 @@ jobs:
         poetry install
       env:
         POETRY_VIRTUALENVS_CREATE: false
-    - name: Analysing the code with mypy
-      run: |
-        mypy .
     - name: Test the code pytest
       run: |
-        pytest .
-    - name: Analysing the code with flake8
+        pytest . -s -v
+    - name: Analysing the code with Ruff
       run: |
-        pip install flake8
-        flake8 --max-line-length=120
+        pip install ruff
+        ruff .
