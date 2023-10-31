@@ -9,7 +9,7 @@ class TestCrypt:
         key = crypto.get_key()
 
         assert isinstance(key, bytes)
-        assert key == b'K7gNU3sdo-OL0wNhqoVWhr3g6s1xYv72ol_pe_Unols='
+        assert key == b"K7gNU3sdo-OL0wNhqoVWhr3g6s1xYv72ol_pe_Unols="
 
     def test_key_not_str(self):
         crypto = Crypto(1)
@@ -18,23 +18,23 @@ class TestCrypt:
             crypto.get_key()
 
     def test_encrypt_successfully(self):
-        password = Crypto('secret').encrypt('password')
+        password = Crypto("secret").encrypt("password")
 
         assert isinstance(password, bytes)
-        assert password != 'password'
+        assert password != "password"
 
     @pytest.mark.parametrize("test_input", [int, tuple, list, dict])
     def test_encrypt_not_successfully(self, test_input):
         with pytest.raises(AttributeError):
-            Crypto('secret').encrypt(test_input)
+            Crypto("secret").encrypt(test_input)
 
     def test_decrypt_empty_value(self):
-        password = Crypto('secret').decrypt_token(b'')
+        password = Crypto("secret").decrypt_token(b"")
 
         assert not password
 
     def test_decrypt_successfully(self):
-        encrypted = Crypto('secret').encrypt('password')
-        decrypted = Crypto('secret').decrypt_token(encrypted)
+        encrypted = Crypto("secret").encrypt("password")
+        decrypted = Crypto("secret").decrypt_token(encrypted)
 
-        assert decrypted == 'password'
+        assert decrypted == "password"
