@@ -8,9 +8,9 @@ from encrypt_decrypt_fields import EncryptedBinaryField, Crypto
 class TestDjangoEncryptField:
     FIELD = EncryptedBinaryField(key="secret")
 
-    @pytest.fixture
+    @pytest.fixture()
     def connection(self):
-        yield Mock()
+        return Mock()
 
     def test_passed_empty_value(self, connection):
         value = self.FIELD.get_db_prep_value(None, connection)
@@ -32,8 +32,7 @@ class TestDjangoEncryptField:
 
     def test_passed_string_value(self, connection):
         connection.Database.Binary.return_value = (
-            b"gAAAAABg1vz2rLbNvztnC8p2hQbBGzrnyuGN772bEY5"
-            b"w9c1s6fVmqZm4bkjJPfr2PAWZZ3twsLcajxK5y6g-KpjjeMO5luh0fg=="
+            b"gAAAAABg1vz2rLbNvztnC8p2hQbBGzrnyuGN772bEY5" b"w9c1s6fVmqZm4bkjJPfr2PAWZZ3twsLcajxK5y6g-KpjjeMO5luh0fg=="
         )
         value = self.FIELD.get_db_prep_value("password", connection)
 

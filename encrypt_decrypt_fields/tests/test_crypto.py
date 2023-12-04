@@ -21,7 +21,7 @@ class TestCrypt:
         password = Crypto("secret").encrypt("password")
 
         assert isinstance(password, bytes)
-        assert password != "password"
+        assert password != "password"  # noqa: S105
 
     @pytest.mark.parametrize("test_input", [int, tuple, list, dict])
     def test_encrypt_not_successfully(self, test_input):

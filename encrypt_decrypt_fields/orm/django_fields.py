@@ -15,7 +15,7 @@ class EncryptedBinaryField(models.BinaryField):
         self.crypto = Crypto(self.key)
         super().__init__(*args, **kwargs)
 
-    def get_db_prep_value(self, value, connection, prepared=False):
+    def get_db_prep_value(self, value, connection, prepared=False):  # noqa: FBT002
         if not value or isinstance(value, (bytes, memoryview)):
             return value
 
