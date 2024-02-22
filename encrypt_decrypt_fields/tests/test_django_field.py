@@ -2,7 +2,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from encrypt_decrypt_fields import EncryptedBinaryField, Crypto
+from encrypt_decrypt_fields import Crypto, EncryptedBinaryField
 
 
 class TestDjangoEncryptField:

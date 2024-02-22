@@ -6,7 +6,7 @@ from cryptography.hazmat.primitives import hashes
 
 
 class Crypto:
-    def __init__(self, key: str):
+    def __init__(self, key: str) -> None:
         self.key = key
 
     def get_key(self) -> bytes:

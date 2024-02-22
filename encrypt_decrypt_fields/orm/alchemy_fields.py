@@ -1,4 +1,4 @@
-from sqlalchemy.types import TypeDecorator, BINARY
+from sqlalchemy.types import BINARY, TypeDecorator
 
 from encrypt_decrypt_fields import Crypto
 
@@ -11,7 +11,7 @@ class EncryptedAlchemyBinaryField(TypeDecorator):
         self.key = key
         self.crypto = Crypto(key=self.key)
 
-    def process_bind_param(self, value, dialect):
+    def process_bind_param(self, value, dialect):  # noqa: ARG002
         if not value or isinstance(value, (bytes, memoryview)):
             return value
 
