@@ -16,7 +16,7 @@ pip install encrypt-decrypt-fields
 
 ## Usage
 
-For Django use project secret key or own:
+For Django use a project secret key or own:
 
 ```python
 from django.db import models
@@ -33,23 +33,11 @@ from .models import DemoModel
 DemoModel.objects.create(password='password')
 
 demo = DemoModel.objects.get(id=1)
-print(demo.password.to_bytes()) 
+print(demo.password) 
 # b'gAAAAABgxGVVeTPV9i1nPNl91Ss4XVH0rD6eJCgOWIOeRwtagp12gBJg9DL_HXODTDW0WKsqc8Z9vsuHUiAr3qQVE9YQmTd3pg=='
 ```
 
-To read bytes in postgres, use to_bytes() method of memoryview
-
-```
-obj.password.to_bytes()
-```
-
-or
-
-```
-bytes(obj.password, 'utf-8')
-```
-
-To decrypt value use Crypto class:
+To decrypt a value, use Crypto class:
 
 ```python
 from django.conf import settings
