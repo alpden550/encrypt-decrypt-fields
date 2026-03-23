@@ -36,10 +36,12 @@ class TestDjangoEncryptField:
             b"w9c1s6fVmqZm4bkjJPfr2PAWZZ3twsLcajxK5y6g-KpjjeMO5luh0fg=="
         )
         value = self.FIELD.get_db_prep_value("password", connection)
+        service = Crypto("secret")
+        decrypted_value = service.decrypt_token(value)
 
         connection.Database.Binary.assert_called_once()
         assert not isinstance(value, str)
-        assert Crypto("secret").decrypt_token(value) == "password"
+        assert decrypted_value == "password"
 
     @pytest.mark.parametrize(
         ("passed", "passed_type"),
