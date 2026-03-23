@@ -47,7 +47,8 @@ from .models import DemoModel
 
 obj = DemoModel.objects.get(id=1)
 
-decrypted = Crypto(settings.SECRET_KEY).decrypt_token(obj.password.to_bytes())
+service = Crypto(settings.SECRET_KEY)
+decrypted = service.decrypt_token(obj.password)
 print(decrypted) 
 # 'password'
 ```
