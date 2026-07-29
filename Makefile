@@ -6,7 +6,7 @@ test:
 
 lint:
 	@echo "Running Ruff linter..."
-	ruff .
+	ruff check .
 
 format:
 	@echo "Running Ruff formatter..."
